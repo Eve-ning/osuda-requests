@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1559661375241.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "FEB2A3AB",
+    "lastKnownWriteTime" : 1559663812,
+    "last_content_update" : 1559663812788,
+    "path" : "~/Projects/repos/requests/src/lib/read_osu.R",
+    "project_path" : "src/lib/read_osu.R",
+    "properties" : {
+        "cursorPosition" : "80,0",
+        "scrollLine" : "60",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

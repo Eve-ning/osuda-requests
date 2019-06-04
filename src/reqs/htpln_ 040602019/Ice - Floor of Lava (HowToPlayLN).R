@@ -32,6 +32,6 @@ ggplot(tp) +
   ylim(c(0,2)) + 
   scale_x_continuous(labels = comma) + 
   ggtitle("Ice - Floor of Lava (HowToPlayLN) [Volcanic Eruption]",
-          "No Binning")
+          "5s Binning")
 
 ggsave("src/reqs/htpln_ 040602019/Rplot.png")

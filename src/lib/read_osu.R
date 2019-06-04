@@ -72,6 +72,7 @@ f.chart.parse.osu <- function(chart) {
       mutate(value = ifelse(is.bpm == 1,
                             60000.0/as.numeric(code),
                             -100.0/as.numeric(code)))
+    tp %<>% mutate_if(is.character, as.numeric)
   }
   return(list("ho"=ho, "tp"=tp))
 }

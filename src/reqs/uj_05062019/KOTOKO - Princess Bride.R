@@ -12,7 +12,7 @@ ho <- chart$ho
 
 ho.new <- ho %>% 
   filter(types != 'lnotel') %>% 
-  mutate(bins = (offsets %/% 5000) * 5000) %>% 
+  mutate(bins = (offsets %/% 1000) * 1000) %>% 
   group_by(bins, keys) %>% 
   summarize(n = n())
 
@@ -20,11 +20,14 @@ ggplot(ho.new) +
   aes(x = bins,
       y = n,
       group = keys,
-      color = factor(keys)) +
-  geom_point() +
-  geom_line() + 
+      color = factor(keys),
+      fill = factor(keys)) +
+  geom_area(alpha = 0.3) +
+  geom_line(linetype = "dotted") + 
   facet_wrap(. ~ keys, ncol = 1) +
   ggtitle("KOTOKO - Princess Bride!",
           "Density Analysis") +
   dark_theme_gray()
+
+ggsave("src/reqs/uj_05062019/Rplot_density.png", width = 13)
   

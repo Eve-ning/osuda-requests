@@ -28,7 +28,7 @@ ggplot(ho.cast) +
 ggsave("src/reqs/icd_05062019/RPlot_ung.png", width = 13, height = 4)
 
 ho.cast.av <- ho.cast %>% 
-  mutate(bins = (offsets %/% 3000) * 3000) %>% 
+  mutate(bins = (offsets %/% 1000) * 1000) %>% 
   group_by(bins) %>% 
   summarize(av.size = mean(sum)) 
 

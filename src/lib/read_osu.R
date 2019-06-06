@@ -9,7 +9,6 @@ f.chart.parse.osu <- function(chart) {
   require(magrittr)
   require(stringr)
   require(reshape2)
-  require(docstring)
   
   f.extract <- function(chart) {
     cs.i <- pmatch('CircleSize:', chart)
@@ -46,9 +45,12 @@ f.chart.parse.osu <- function(chart) {
     ho$keys = round((as.integer(ho$axis) * keys - 256) / 512) + 1
     ho %<>% na.omit() 
     ho$lnotel[ho$is.ln == F] <- NA
-    ho %<>% mutate_if(is.character, as.numeric)
     
     ho <- ho[c('note', 'lnotel', 'keys', 'is.ln')]
+    
+    ho %<>% mutate_if(is.character, as.numeric)
+    
+
     ho %<>% 
       mutate(lng = ifelse(is.ln, lnotel - note, 0))
     ho$lnoteh[ho$is.ln] <- ho$note[ho$is.ln]
@@ -77,6 +79,3 @@ f.chart.parse.osu <- function(chart) {
   return(list("ho"=ho, "tp"=tp))
 }
 
-f <- readLines("src/reqs/fletch_04062019/Hyper Potions - Jungle Cruise (Theresa May) [Stage 2 - Excitement].osu")
-t <- f.chart.parse.osu(f)
-t$ho
